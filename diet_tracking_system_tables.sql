@@ -119,6 +119,6 @@ CREATE TABLE payments (
     payment_date DATE NOT NULL,
     payment_method VARCHAR(100) NOT NULL,
     status VARCHAR(50) NOT NULL,
-    subscription_id INT NOT NULL
-    FOREIGN KEY (subscription_id) REFERENCES user_subscriptions(subscription_id),
+    subscription_id INT NOT NULL,
+    FOREIGN KEY (subscription_id) REFERENCES user_subscriptions(subscription_id)
 );
