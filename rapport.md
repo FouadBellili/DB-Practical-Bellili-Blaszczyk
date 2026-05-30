@@ -222,10 +222,29 @@ Prevents more than one daily log per user and date, complementing the unique ind
 
 ---
 
-## 11. Conclusion
+## 11. Views
+
+Eight views are defined to simplify application queries and reporting. All use `CREATE OR ALTER VIEW` for safe re-execution.
+
+| View | Purpose |
+|---|---|
+| `vw_user_profile` | User profile with active subscription plan |
+| `vw_user_diet_plans` | Diet plans per user with assigned nutritionist |
+| `vw_diet_plan_schedule` | Full weekly meal schedule with calories per plan |
+| `vw_user_daily_food_log` | Meals logged per user per day with calories |
+| `vw_user_daily_calories` | Aggregated daily calorie totals per user¹ |
+| `vw_user_progress` | Weight entries over time vs. current profile |
+| `vw_user_payment_history` | Payment and subscription history per user |
+| `vw_nutritionist_workload` | Plan and user count per nutritionist |
+
+> ¹ Depends on `vw_user_daily_food_log` — create that view first.
+
+---
+
+## 12. Conclusion
 
 > *(to be completed)*
 
 ---
 
-*Report written by Fouad Bellili and [Blaszczyk First Name] — [Institution], 2025/2026*
+*Report written by Fouad Bellili and Blaszczyk Jakub — [Institution], 2025/2026*
