@@ -13,7 +13,7 @@ internal static class DatabaseHelper
     // Password : your password
     // ============================================================
     private const string ConnectionString =
-        "Server=192.168.182.10;Database=p4g7;User Id=username;Password=password;TrustServerCertificate=True;";
+        "Server=192.168.182.10;Database=p4g7;User Id=p4g7;Password=123456789;TrustServerCertificate=True;";
 
     private static SqlConnection OpenConnection()
     {

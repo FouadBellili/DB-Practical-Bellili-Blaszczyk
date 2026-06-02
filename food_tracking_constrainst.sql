@@ -20,7 +20,7 @@ ALTER TABLE foods
 ALTER TABLE subscription_plans
   ADD CONSTRAINT uq_subscription_plans_name UNIQUE (subscription_name);
 ALTER TABLE subscription_plans
-  ADD CONSTRAINT chk_subscription_plans_price CHECK (price > 0);
+  ADD CONSTRAINT chk_subscription_plans_price CHECK (price >= 0);
 ALTER TABLE subscription_plans
   ADD CONSTRAINT chk_subscription_plans_duration CHECK (duration_days > 0);
 
