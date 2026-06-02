@@ -40,7 +40,7 @@ The **Diet Tracking System** is a nutritional tracking application that allows u
 
 ## 2. Entity-Relationship Diagram (ERD)
 
-> *(insert diagram here)*
+![ERD](diagram_corrected.jpeg)
 
 **Main entities:**
 
