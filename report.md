@@ -224,7 +224,15 @@ Prevents more than one daily log per user and date, complementing the unique ind
 
 ## 11. Conclusion
 
-> *(to be completed)*
+This project resulted in a fully functional diet tracking system, built around a normalized relational database running on SQL Server and a C# Windows Forms application as the graphical interface.
+
+The database design went through a complete development cycle: starting from requirements analysis and entity-relationship modelling, moving into a normalized relational schema (1NF, 2NF, 3NF), and then translated into SQL Server using dedicated DDL scripts for tables, constraints, indexes, views, stored procedures, UDFs, and triggers — each organized in its own file for clarity and reusability.
+
+The use of stored procedures as the main data access layer keeps the business logic centralized in the database and decoupled from the application code. Triggers automate key consistency rules — such as activating subscriptions upon payment confirmation and keeping the user's weight in sync with their latest progress record — reducing the risk of data inconsistencies caused by application-level errors. User-defined functions encapsulate reusable calculations (BMI, meal calories, daily totals) that are called both from stored procedures and directly within the application. Indexes were chosen based on the most frequent query patterns (JOIN columns, filter columns, and uniqueness constraints) to improve performance without unnecessary overhead.
+
+On the application side, all user interactions — logging meals, recording progress, subscribing to a plan, registering payments — are handled through the stored procedures, so the application never executes raw ad-hoc SQL. Connection string configuration is centralized in a single location in the project, documented in the README, making it straightforward to adapt for testing.
+
+Overall, the project demonstrated how a well-structured relational database, combined with SQL Server's programmability features, can support a real-world application with complex rules around data integrity, automation, and multi-user access.
 
 ---
 
